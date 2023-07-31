@@ -22,7 +22,7 @@
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edt_ld"
+        android:id="@+id/edt_id_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -49,7 +49,7 @@
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edt_pw"
+        android:id="@+id/edt_pw_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -68,14 +68,14 @@
         android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/login" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sign"
+        android:id="@+id/btn_sign_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
