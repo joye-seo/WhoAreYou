@@ -14,4 +14,6 @@
     <string name="age_hint">나이를 입력하세요.</string>
     <string name="mbti">mbti</string>
     <string name="mbti_hint">mbti를 입력하세요.</string>
+    <string name="finish">종료</string>
+
 </resources>
