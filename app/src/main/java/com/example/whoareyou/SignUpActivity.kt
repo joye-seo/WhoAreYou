@@ -26,13 +26,14 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 val homeIntent = Intent(this, SignInActivity::class.java)
                     .putExtra("id", id.text.toString())
+                    .putExtra("pw", pw.text.toString())
                     .putExtra("name", name.text.toString())
                     .putExtra("age", age.text.toString())
                     .putExtra("mbti", mbti.text.toString())
 
-                startActivity(homeIntent)
+                setResult(RESULT_OK, homeIntent)
+                finish()
             }
-
 
         }
 
