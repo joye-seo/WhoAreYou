@@ -8,7 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
 
-    private val image = arrayListOf(R.drawable.ic_profile, R.drawable.ic_profile_faker, R.drawable.ic_profile_android)
+    private val image = arrayListOf(
+        R.drawable.ic_profile,
+        R.drawable.ic_profile_faker,
+        R.drawable.ic_profile_android,
+        R.drawable.ic_profile_android2,
+        R.drawable.ic_profile_android3
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
