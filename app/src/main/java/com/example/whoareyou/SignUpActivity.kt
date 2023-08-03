@@ -32,10 +32,15 @@ class SignUpActivity : AppCompatActivity() {
                 editor.putString("name", name.text.toString())
                 editor.putString("age", age.text.toString())
                 editor.putString("mbti", mbti.text.toString())
+                editor.apply()
 
                 val homeIntent = Intent(this, SignInActivity::class.java)
+                    .putExtra("id", id.text.toString())
+                    .putExtra("pw", pw.text.toString())
                 setResult(RESULT_OK, homeIntent)
                 finish()
+
+                Log.d("testMemo", sharedPreference.getString("id", "").toString())
             }
         }
 

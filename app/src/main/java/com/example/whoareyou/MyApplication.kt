@@ -1,5 +1,6 @@
+package com.example.whoareyou
+
 import android.app.Application
-import com.example.whoareyou.PreferenceUtil
 
 class MyApplication : Application()
 {

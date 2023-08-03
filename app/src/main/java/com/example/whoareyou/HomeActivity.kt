@@ -16,9 +16,12 @@ class HomeActivity : AppCompatActivity() {
         R.drawable.ic_profile_android3
     )
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val sharedPreference = getSharedPreferences("other", 0)
 
         val id = findViewById<TextView>(R.id.tv_id)
         val name = findViewById<TextView>(R.id.tv_name)
@@ -27,10 +30,10 @@ class HomeActivity : AppCompatActivity() {
         val btnFinished = findViewById<Button>(R.id.btn_finish)
         val icProfile = findViewById<ImageView>(R.id.ic_profile)
 
-        id.text = intent.getStringExtra("id").toString()
-        name.text = intent.getStringExtra("name").toString()
-        age.text = intent.getStringExtra("age").toString()
-        mbti.text = intent.getStringExtra("mbti").toString()
+        id.text = sharedPreference.getString("id", "")
+        name.text = sharedPreference.getString("name", "")
+        age.text = sharedPreference.getString("age", "")
+        mbti.text = sharedPreference.getString("mbti", "")
 
         icProfile.setImageResource(image.random())
 
