@@ -1,6 +1,7 @@
 package com.example.whoareyou
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -32,18 +33,21 @@ class SignInActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
+            val sharedPreference = getSharedPreferences("other", 0)
+
             if (id.text.toString().isEmpty() || pw.text.toString().isEmpty()) {
-                Toast.makeText(this, "로그인을 할 수 없습니다. \n아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
-            } else {
+                Toast.makeText(this, "이메일 또는 비밀번호가 빈칸 입니다.", Toast.LENGTH_SHORT).show()
+            } else if (id.text.toString() == sharedPreference.getString("id", "")
+                && pw.text.toString() == sharedPreference.getString("pw", "")
+            ) {
+                print("test")
                 val loginIntent =
                     Intent(this, HomeActivity::class.java)
-                        .putExtra("id", id.text.toString())
-                        .putExtra("name", name)
-                        .putExtra("age", age)
-                        .putExtra("mbti", mbti)
 
                 startActivity(loginIntent)
                 Toast.makeText(this, "로그인성공", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "로그인을 할 수 없습니다. \n아이디 또는 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
             }
         }
 

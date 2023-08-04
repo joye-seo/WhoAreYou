@@ -163,6 +163,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_finish"
+        android:paddingHorizontal="30dp"
+        android:drawableStart="@drawable/selector_icon"
+        android:drawableEnd="@drawable/selector_icon"
+        android:textColor="@drawable/selector_text_color"
+        android:background="@drawable/selector_button"
         app:layout_constraintTop_toBottomOf="@id/layout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
