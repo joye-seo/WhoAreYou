@@ -32,15 +32,6 @@
         android:maxLines="1" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_error_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/id_error"
-        android:textColor="@color/error"
-        android:textSize="12sp"
-        android:visibility="gone" />
-
-    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -57,15 +48,6 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:maxLines="1" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_error_pw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password_error"
-        android:textColor="@color/error"
-        android:textSize="12sp"
-        android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/check_auto_login"

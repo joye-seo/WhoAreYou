@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -19,6 +20,9 @@ class SignUpActivity : AppCompatActivity() {
         val age = findViewById<EditText>(R.id.edt_age)
         val mbti = findViewById<EditText>(R.id.edt_mbti)
         val btnSignUp = findViewById<Button>(R.id.btn_sign)
+
+        val errorId = findViewById<TextView>(R.id.tv_error_id)
+        val errorPw = findViewById<TextView>(R.id.tv_error_pw)
 
         btnSignUp.setOnClickListener {
 
