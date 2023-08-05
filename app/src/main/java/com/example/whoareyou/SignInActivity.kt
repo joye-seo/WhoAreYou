@@ -1,14 +1,16 @@
 package com.example.whoareyou
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 
 class SignInActivity : AppCompatActivity() {
 
@@ -26,10 +28,18 @@ class SignInActivity : AppCompatActivity() {
 
         id = findViewById(R.id.edt_id_sign_in)
         pw = findViewById(R.id.edt_pw_sign_in)
+        val errorId = findViewById<TextView>(R.id.tv_error_id)
+        val errorPw = findViewById<TextView>(R.id.tv_error_pw)
         val btnLogin = findViewById<Button>(R.id.btn_login_sign_in)
         val btnSignUp = findViewById<Button>(R.id.btn_sign_sign_in)
 
         setResultSignUp()
+
+        id.addTextChangedListener {
+
+
+
+        }
 
         btnLogin.setOnClickListener {
 
@@ -46,7 +56,7 @@ class SignInActivity : AppCompatActivity() {
 
                 startActivity(loginIntent)
                 Toast.makeText(this, "로그인성공", Toast.LENGTH_SHORT).show()
-            }else{
+            } else {
                 Toast.makeText(this, "로그인을 할 수 없습니다. \n아이디 또는 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
             }
         }
