@@ -12,17 +12,20 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+lateinit var id: EditText
 lateinit var pw: EditText
 
 lateinit var errorId: TextView
 lateinit var errorPw: TextView
+
+var isSignUp = false
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val id = findViewById<EditText>(R.id.edt_id)
+        id = findViewById<EditText>(R.id.edt_id)
         pw = findViewById<EditText>(R.id.edt_pw)
         val name = findViewById<EditText>(R.id.edt_name)
         val age = findViewById<EditText>(R.id.edt_age)
@@ -32,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         errorId = findViewById(R.id.tv_error_id)
         errorPw = findViewById(R.id.tv_error_pw)
 
-        pw.addTextChangedListener(object : TextWatcher {
+        id.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -45,12 +48,25 @@ class SignUpActivity : AppCompatActivity() {
 
         })
 
+        pw.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                editTextPwError()
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
+
         btnSignUp.setOnClickListener {
 
 
             if (id.text.toString().isEmpty() || pw.text.toString().isEmpty() || name.text.toString().isEmpty()) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-            } else {
+            } else if (!isSignUp) {
                 val sharedPreference = getSharedPreferences("other", 0)
                 val editor = sharedPreference.edit()
                 editor.putString("id", id.text.toString())
@@ -65,8 +81,9 @@ class SignUpActivity : AppCompatActivity() {
                     .putExtra("pw", pw.text.toString())
                 setResult(RESULT_OK, homeIntent)
                 finish()
+            } else {
+                Toast.makeText(this, "필수 정보를 읽고 수정하세요.", Toast.LENGTH_SHORT).show()
 
-                Log.d("testMemo", sharedPreference.getString("id", "").toString())
             }
         }
 
@@ -75,9 +92,22 @@ class SignUpActivity : AppCompatActivity() {
 
 fun editTextIdError() {
 
+    if (id.length() in 5..20) {
+        errorId.visibility = View.GONE
+        isSignUp = true
+    } else {
+        errorId.visibility = View.VISIBLE
+        isSignUp = false
+    }
+}
+
+fun editTextPwError() {
+
     if (pw.length() < 10) {
         errorPw.visibility = View.VISIBLE
+        isSignUp = true
     } else {
         errorPw.visibility = View.GONE
+        isSignUp = false
     }
 }

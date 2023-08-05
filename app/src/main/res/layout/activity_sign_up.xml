@@ -17,13 +17,29 @@
             android:layout_marginTop="100dp"
             app:srcCompat="@drawable/ic_profile_null" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="50dp"
-            android:text="@string/id"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/id"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/essential"
+                android:textColor="@color/error"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_id"
@@ -44,13 +60,29 @@
             android:textSize="12sp"
             android:visibility="gone" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="25dp"
-            android:text="@string/password"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/essential"
+                android:textColor="@color/error"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_pw"
@@ -71,13 +103,28 @@
             android:textSize="12sp"
             android:visibility="gone" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="25dp"
-            android:text="@string/name"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/essential"
+                android:textColor="@color/error"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_name"
