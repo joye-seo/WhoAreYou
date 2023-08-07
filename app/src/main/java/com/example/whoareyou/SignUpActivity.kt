@@ -92,7 +92,7 @@ class SignUpActivity : AppCompatActivity() {
 
 fun editTextIdError() {
 
-    if (id.length() in 5..20) {
+    if (id.length() in 4..20) {
         errorId.visibility = View.GONE
         isSignUp = true
     } else {
@@ -103,7 +103,7 @@ fun editTextIdError() {
 
 fun editTextPwError() {
 
-    if (pw.length() < 10) {
+    if (pw.length() < 8) {
         errorPw.visibility = View.VISIBLE
         isSignUp = true
     } else {

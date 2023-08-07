@@ -5,15 +5,20 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 class HomeActivity : AppCompatActivity() {
 
     private val image = arrayListOf(
-        R.drawable.ic_profile,
-        R.drawable.ic_profile_faker,
-        R.drawable.ic_profile_android,
-        R.drawable.ic_profile_android2,
-        R.drawable.ic_profile_android3
+        R.drawable.pf_img_1,
+        R.drawable.pf_img_2,
+        R.drawable.pf_img_3,
+        R.drawable.pf_img_4,
+        R.drawable.pf_img_5,
+        R.drawable.pf_img_6,
+        R.drawable.pf_img_7,
+        R.drawable.pf_img_8,
+        R.drawable.pf_img_9,
     )
 
 
@@ -35,7 +40,12 @@ class HomeActivity : AppCompatActivity() {
         age.text = sharedPreference.getString("age", "")
         mbti.text = sharedPreference.getString("mbti", "")
 
-        icProfile.setImageResource(image.random())
+        Glide.with(this)
+            .load(image.random())
+            .circleCrop()
+            .into(icProfile)
+
+//        icProfile.setImageResource(image.random())
 
         btnFinished.setOnClickListener {
             finish()

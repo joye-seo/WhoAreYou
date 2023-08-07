@@ -37,6 +37,8 @@ class SignInActivity : AppCompatActivity() {
 
             if (id.text.toString().isEmpty() || pw.text.toString().isEmpty()) {
                 Toast.makeText(this, "이메일 또는 비밀번호가 빈칸 입니다.", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this , getString(R.string.toast_mesg_idpgErr), Toast.Length_SHORT).show() -> string에 메세지 값 넣어둠
+                // return으로 아래문법 실행 안되게 할 수 있음
             } else if (id.text.toString() == sharedPreference.getString("id", "")
                 && pw.text.toString() == sharedPreference.getString("pw", "")
             ) {
