@@ -3,6 +3,7 @@ package com.example.whoareyou
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -23,11 +24,11 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-
         id = findViewById(R.id.edt_id_sign_in)
         pw = findViewById(R.id.edt_pw_sign_in)
         val btnLogin = findViewById<Button>(R.id.btn_login_sign_in)
         val btnSignUp = findViewById<Button>(R.id.btn_sign_sign_in)
+        val autoLogin = findViewById<CheckBox>(R.id.check_auto_login)
 
         setResultSignUp()
 

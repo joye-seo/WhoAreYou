@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="20dp">
+    android:paddingHorizontal="30dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,10 +11,10 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             app:srcCompat="@drawable/ic_logo" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -33,7 +33,8 @@
             android:hint="@string/id_hint"
             android:imeOptions="actionNext"
             android:inputType="text"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -51,29 +52,35 @@
             android:hint="@string/password_hint"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/check_auto_login"
             android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
-            android:text="자동 로그인" />
+            android:text="@string/auto_login"
+            android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:background="@color/yellow"
             android:text="@string/login" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_sign_sign_in"
             android:layout_width="match_parent"
-            android:layout_marginBottom="30dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/yellow"
             android:text="@string/sign_up" />
 
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
+
