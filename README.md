@@ -8,7 +8,8 @@
 2. 회원가입이 되어있지 않은 상태로 값을 넣어도 토스트 메세지 띄움
 3. registerForActivityResult를 이용해 회원가입 한 데이터 불러옴
 4. 로그인 성공 시 토스트 메세지 띄움
-5. 자동 로그인을 통해 체크 시 따로 회원가입 없이 로그인 함 (추후 예정)
+5. shared preference를 사용하요 데이터 값을 list로 저장할 수 있음
+6. 자동 로그인을 통해 체크 시 따로 회원가입 없이 로그인 함 (추후 예정)
    
 
 ### SignUp Activity
@@ -27,4 +28,4 @@
 
 ## 앱 실행 화면 예시
 
-![test](https://github.com/joye-seo/WhoAreYou/assets/104261048/18dacf4e-fd3b-49e1-9661-1ef0cc20850f)
+![test](https://github.com/joye-seo/WhoAreYou/assets/104261048/45fb9c0d-4fef-4efc-8e04-7961a21bfd04)

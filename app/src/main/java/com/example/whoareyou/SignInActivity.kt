@@ -65,6 +65,7 @@ class SignInActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this, HomeActivity::class.java).putExtra("index", index)
                 startActivity(intent)
+                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                 Log.d("testOperation1", signDataList[index])
 
             }
