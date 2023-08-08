@@ -2,6 +2,7 @@ package com.example.whoareyou
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -14,18 +15,18 @@ import androidx.appcompat.app.AppCompatActivity
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
+
     private lateinit var id: EditText
     private lateinit var pw: EditText
-    var name = ""
-    var age = ""
-    var mbti = ""
+
+    private var login: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        id = findViewById(R.id.edt_id_sign_in)
-        pw = findViewById(R.id.edt_pw_sign_in)
+        id = findViewById<EditText>(R.id.edt_id_sign_in)
+        pw = findViewById<EditText>(R.id.edt_pw_sign_in)
         val btnLogin = findViewById<Button>(R.id.btn_login_sign_in)
         val btnSignUp = findViewById<Button>(R.id.btn_sign_sign_in)
         val autoLogin = findViewById<CheckBox>(R.id.check_auto_login)
@@ -34,25 +35,41 @@ class SignInActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
-            val sharedPreference = getSharedPreferences("other", 0)
+            val userId = id.text.toString()
+            val userPassword = pw.text.toString()
+            val signDataList = PreferenceUtil(applicationContext).getString()
+            var index = 0
 
-            if (id.text.toString().isEmpty() || pw.text.toString().isEmpty()) {
-                Toast.makeText(this, "이메일 또는 비밀번호가 빈칸 입니다.", Toast.LENGTH_SHORT).show()
-                // Toast.makeText(this , getString(R.string.toast_mesg_idpgErr), Toast.Length_SHORT).show() -> string에 메세지 값 넣어둠
-                // return으로 아래문법 실행 안되게 할 수 있음
-            } else if (id.text.toString() == sharedPreference.getString("id", "")
-                && pw.text.toString() == sharedPreference.getString("pw", "")
-            ) {
-                print("test")
-                val loginIntent =
-                    Intent(this, HomeActivity::class.java)
+            for (i in signDataList) {
+                //shared preference에 있는 값을 : 를 기준으로 자르고 각각 변수로 초기화 시킴
+                val signUpContent = i.split(" : ")
 
-                startActivity(loginIntent)
-                Toast.makeText(this, "로그인성공", Toast.LENGTH_SHORT).show()
+                if (signUpContent[0] == userId && signUpContent[1] == userPassword) {
+
+                    /**
+                     * ++index 대신 list에 해당하는 인덱스 값을 불러오면 되는데..좀있다가 수정하쟈..ㅜㅜ!!
+                     */
+
+                    login = true
+                    break
+                } else {
+                    ++index
+                    login = false
+                }
+            }
+
+            if (!login) {
+
+                Toast.makeText(this, "아이디 또는 비밀번호를 확인해주세요!", Toast.LENGTH_SHORT).show()
+
             } else {
-                Toast.makeText(this, "로그인을 할 수 없습니다. \n아이디 또는 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java).putExtra("index", index)
+                startActivity(intent)
+                Log.d("testOperation1", signDataList[index])
+
             }
         }
+
 
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -68,15 +85,10 @@ class SignInActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) {
                 val resultId = result.data?.getStringExtra("id") ?: ""
                 val resultPw = result.data?.getStringExtra("pw") ?: ""
-                val resultName = result.data?.getStringExtra("name").toString()
-                val resultAge = result.data?.getStringExtra("age").toString()
-                val resultMbti = result.data?.getStringExtra("mbti").toString()
 
                 id.setText(resultId).toString()
                 pw.setText(resultPw).toString()
-                name = resultName
-                age = resultAge
-                mbti = resultMbti
+
 
             }
         }

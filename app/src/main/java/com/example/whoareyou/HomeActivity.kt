@@ -26,8 +26,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val sharedPreference = getSharedPreferences("other", 0)
-
         val id = findViewById<TextView>(R.id.tv_id)
         val name = findViewById<TextView>(R.id.tv_name)
         val age = findViewById<TextView>(R.id.tv_age)
@@ -35,19 +33,23 @@ class HomeActivity : AppCompatActivity() {
         val btnFinished = findViewById<Button>(R.id.btn_finish)
         val icProfile = findViewById<ImageView>(R.id.ic_profile)
 
-        id.text = sharedPreference.getString("id", "")
-        name.text = sharedPreference.getString("name", "")
-        age.text = sharedPreference.getString("age", "")
-        mbti.text = sharedPreference.getString("mbti", "")
+        val index = intent.getIntExtra("index", -1) // -1은 기본 값
+
+        val signDataList = PreferenceUtil(applicationContext).getString()[index]
+
+        val homeContent = signDataList.split(" : ")
+
+        id.text = homeContent[0]
+        name.text = homeContent[2]
+        age.text = homeContent[3]
+        mbti.text = homeContent[4]
 
         Glide.with(this)
             .load(image.random())
             .circleCrop()
             .into(icProfile)
 
-//        icProfile.setImageResource(image.random())
-
-        btnFinished.setOnClickListener {
+        btnFinished.setOnClickListener{
             finish()
         }
 
