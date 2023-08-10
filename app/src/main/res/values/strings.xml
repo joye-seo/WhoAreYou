@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WhoAreYou</string>
     <string name="id">아이디</string>
+    <string name="kakao">카카오계정 (이메일 또는 전화번호)</string>
     <string name="id_hint">아이디를 입력하세요.</string>
     <string name="id_error">아이디는 영문, 숫자를 포함하여 4~20자까지만 입력 가능합니다.</string>
     <string name="password">비밀번호</string>
@@ -16,6 +17,6 @@
     <string name="mbti_hint">mbti를 입력하세요.</string>
     <string name="finish">종료</string>
     <string name="essential">(필수)</string>
-    <string name="auto_login">자동 로그인</string>
+    <string name="auto_login">실행시 자동 로그인</string>
 
 </resources>
