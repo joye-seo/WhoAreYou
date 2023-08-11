@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="20dp">
@@ -10,15 +11,52 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/layout_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_sign_up_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/baseline_arrow_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/baseline_arrow_back"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            app:srcCompat="@drawable/ic_profile_null" />
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/ic_image_add" />
 
 
         <LinearLayout
+            android:id="@+id/layout_id"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"
@@ -41,24 +79,39 @@
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edt_id"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/id_hint"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLines="1" />
+            android:background="@drawable/shape_edit_text"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            tools:ignore="RtlSymmetry">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_error_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/id_error"
-            android:textColor="@color/error"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/id_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textVisiblePassword"
+                android:maxLines="1"
+                android:paddingVertical="17dp"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_error_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/id_error"
+                android:textColor="@color/error"
+                android:paddingBottom="5dp"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -84,24 +137,39 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_edit_text"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        tools:ignore="RtlSymmetry">
+
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:background="@null"
             android:hint="@string/password_hint"
             android:imeOptions="actionNext"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:paddingVertical="17dp"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_error_pw"
             android:layout_width="wrap_content"
+            android:paddingBottom="5dp"
             android:layout_height="wrap_content"
             android:text="@string/password_error"
             android:textColor="@color/error"
             android:textSize="12sp"
             android:visibility="gone" />
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -131,10 +199,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/shape_edit_text"
             android:hint="@string/name_hint"
             android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLines="1" />
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingVertical="17dp"
+            android:paddingStart="18dp"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -150,10 +223,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/shape_edit_text"
             android:hint="@string/age_hint"
             android:imeOptions="actionNext"
             android:inputType="number"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:paddingVertical="17dp"
+            android:paddingStart="18dp"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -168,18 +246,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/shape_edit_text"
             android:hint="@string/mbti_hint"
             android:imeOptions="actionDone"
-            android:inputType="text"
-            android:maxLines="1" />
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:paddingVertical="17dp"
+            android:paddingStart="18dp"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/yellow"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="30dp"
+            android:background="@color/yellow"
             android:text="@string/sign_up" />
 
     </LinearLayout>

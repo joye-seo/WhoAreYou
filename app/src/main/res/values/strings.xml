@@ -18,5 +18,6 @@
     <string name="finish">종료</string>
     <string name="essential">(필수)</string>
     <string name="auto_login">실행시 자동 로그인</string>
+    <string name="information">회원 정보</string>
 
 </resources>

@@ -51,7 +51,7 @@
 
         <View
             android:id="@+id/edt_line"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:background="#F5F5F5"
             app:layout_constraintBottom_toTopOf="@id/edt_pw_sign_in"
