@@ -10,6 +10,7 @@
 4. 로그인 성공 시 토스트 메세지 띄움
 5. shared preference를 사용하요 데이터 값을 list로 저장할 수 있음
 6. 자동 로그인을 통해 체크 시 따로 회원가입 없이 로그인 함 (추후 예정)
+7. 카카오톡 PC과 유사하게 디자인 작업을 함
    
 
 ### SignUp Activity
@@ -28,4 +29,4 @@
 
 ## 앱 실행 화면 예시
 
-![test](https://github.com/joye-seo/WhoAreYou/assets/104261048/45fb9c0d-4fef-4efc-8e04-7961a21bfd04)
+![test](https://github.com/joye-seo/WhoAreYou/assets/104261048/1cddd61f-8d96-4bdc-b1f9-3ca25e01e5a1)
