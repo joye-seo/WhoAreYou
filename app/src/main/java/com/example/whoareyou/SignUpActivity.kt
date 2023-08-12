@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ class SignUpActivity : AppCompatActivity() {
         val age = findViewById<EditText>(R.id.edt_age)
         val mbti = findViewById<EditText>(R.id.edt_mbti)
         val btnSignUp = findViewById<Button>(R.id.btn_sign)
+        val btnBack = findViewById<ImageView>(R.id.btn_sign_up_back)
 
         val errorId = findViewById<TextView>(R.id.tv_error_id)
         val errorPw = findViewById<TextView>(R.id.tv_error_pw)
@@ -80,6 +82,10 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "조건에 맞게 작성해주세요", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnBack.setOnClickListener {
+            finish()
         }
 
     }

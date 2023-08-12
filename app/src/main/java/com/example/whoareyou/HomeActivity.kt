@@ -33,6 +33,9 @@ class HomeActivity : AppCompatActivity() {
         val btnFinished = findViewById<Button>(R.id.btn_finish)
         val icProfile = findViewById<ImageView>(R.id.ic_profile)
 
+        val btnBack = findViewById<ImageView>(R.id.btn_home_back)
+
+
         val index = intent.getIntExtra("index", -1) // -1은 기본 값
 
         val signDataList = PreferenceUtil(applicationContext).getString()[index]
@@ -50,6 +53,10 @@ class HomeActivity : AppCompatActivity() {
             .into(icProfile)
 
         btnFinished.setOnClickListener{
+            finish()
+        }
+
+        btnBack.setOnClickListener {
             finish()
         }
 
