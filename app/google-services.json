@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392368881370",
+    "project_id": "whoareyou-ea64b",
+    "storage_bucket": "whoareyou-ea64b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392368881370:android:c3107627d2994fc3716fe3",
+        "android_client_info": {
+          "package_name": "com.example.whoareyou"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv1hsu0Y8Et3ebzi_vWp7hALlT8XBN0ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

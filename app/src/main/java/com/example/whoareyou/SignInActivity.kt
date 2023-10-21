@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SignInActivity : AppCompatActivity() {
 
+
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     private lateinit var id: EditText
@@ -69,9 +70,8 @@ class SignInActivity : AppCompatActivity() {
                 Log.d("testOperation1", signDataList[index])
 
             }
+
         }
-
-
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
