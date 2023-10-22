@@ -103,6 +103,16 @@ class SignUpActivity : AppCompatActivity() {
                             mdatabaseRef.child("User").child(mFirebaseUser.uid)
                                 .setValue(UserAccount(userId, userPassword))
                         }
+                        val user = hashMapOf(
+                            "nickName" to userName,
+                            "password" to userPassword,
+                        )
+                        fireStore.collection("data").add(user).addOnSuccessListener { documentReference ->
+                            Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                        }
+                            .addOnFailureListener { e ->
+                                Log.w(TAG, "Error adding document", e)
+                            }
 
 
 
